@@ -24,3 +24,12 @@ git log --oneline --graph --decorate --abbrev-commit branch1..branch2
 git diff branch1..branch2
 git difftool branch1..branch2
 ```
+
+## Adding Hunk
+
+```bash
+git add -p file.txt
+# You will be prompted with options to add which hunk to the commit
+```
+
+Ref: https://stackoverflow.com/questions/1085162/commit-only-part-of-a-files-changes-in-git
