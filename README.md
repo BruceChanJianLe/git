@@ -34,6 +34,15 @@ git add -p file.txt
 
 Ref: https://stackoverflow.com/questions/1085162/commit-only-part-of-a-files-changes-in-git
 
+## Health Check
+
+```bash
+sudo apt install git-sizer
+git-sizer -h
+```
+
+The proportion of `commits`, `tree` and `blob` will determine whether a git repository is healthy. A good looking repository, like the linux kernel, has `trees` > `blob` > `commit`, 45% : 35% : 20%.
+
 ## Cloning
 
 Partial Clone 1
