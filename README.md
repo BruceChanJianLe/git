@@ -34,7 +34,7 @@ git add -p file.txt
 
 Ref: https://stackoverflow.com/questions/1085162/commit-only-part-of-a-files-changes-in-git
 
-## Health Check
+## Repo Health Check
 
 ```bash
 sudo apt install git-sizer
@@ -43,7 +43,7 @@ git-sizer -h
 
 The proportion of `commits`, `tree` and `blob` will determine whether a git repository is healthy. A good looking repository, like the linux kernel, has `trees` > `blob` > `commit`, 45% : 35% : 20%.
 
-## Cloning
+## More About Cloning
 
 Partial Clone 1
 ```bash
@@ -64,3 +64,20 @@ git clone --depth=1 <url>
 This clone creates a shallow clone. These clones truncate the commit history to reduce the clone size. This creates some unexpected behavior issues, limiting which Git commands are possible. These clones also put undue stress on later fetches, so they are strongly discouraged for developer use. They are helpful for some build environments where the repository will be deleted after a single build.
 
 Ref: https://github.blog/2020-12-21-get-up-to-speed-with-partial-clone-and-shallow-clone/#:~:text=Git's%20partial%20clone%20feature%20is,your%20repository%20match%20the%20filter.
+
+## More About Checkout
+
+```bash
+git sparse-checkout init --cone
+git sparse-checkout set <dir1> ... <dirN>
+git sparse-checkout add <dir>
+git sparse-checkout disable
+```
+
+Combine with partial clone!!!
+Time to give this a try :D
+```bash
+git clone --filter=blob:none --sparse <url> <repo>/src
+```
+
+Ref: https://github.blog/2020-12-21-get-up-to-speed-with-partial-clone-and-shallow-clone/
